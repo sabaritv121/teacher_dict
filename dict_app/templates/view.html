@@ -1,0 +1,32 @@
+{% extends "djangify/Modified_files/index.html" %}
+{% block content %}
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">SI No</th>
+                <th scope="col">Firstname</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Profilepic</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">NumberRoom</th>
+                <th scope="col">Subjects</th>
+                
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for n in data %}
+            <tr>
+                <td scope="row">{{forloop.counter}}</td>
+                 <td>{{n.FirstName}}</td>
+                 <td>{{n.LastName}}</td>
+                 <td><img src="{{ n.Profile_picture }}" style="width:200px"/></td>
+                 <td>{{n.Email}}</td>
+                 <td>{{n.Phone}}</td>
+                 <td>{{n.NumberRoom}}</td>
+                 <td>{{n.Subjects}}</td>
+
+             {% endfor %}    
+{% endblock %}
