@@ -18,7 +18,7 @@ class Teacher(models.Model):
     Email =models.EmailField()
     Address= models.TextField(max_length=200)
     Phone=models.CharField(max_length=100)
-    NumberRoom=models.IntegerField(max_length=100)
+    NumberRoom=models.IntegerField()
     CHOICES =(
     ("computer science", "computer science"),
     ("mathematics", "mathematics"),
@@ -36,4 +36,12 @@ class Teacher(models.Model):
     def __str__(self):
         return self.name
 
-        
+
+
+class csv(models.Model):
+    file_name=models.FileField(upload_to = 'csv')
+    uploaded = models.DateTimeField(auto_now = True)
+    activate = models.BooleanField(default = False)
+
+    def __str__(self):
+        return f"File id:{self.id}"

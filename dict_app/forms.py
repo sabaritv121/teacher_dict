@@ -22,4 +22,12 @@ class TeacherAddForm(forms.ModelForm):
 
     class Meta:
         model = Teacher
-        fields = ('FirstName','LastName','Profile_picture','Email','Address','Phone','NumberRoom','Subjects')        
+        fields = ('FirstName','LastName','Profile_picture','Email','Address','Phone','NumberRoom','Subjects')
+
+
+
+
+class CsvForm(forms.modelform):
+     class Meta:
+         model = csv
+         fields = ('file_name',)
